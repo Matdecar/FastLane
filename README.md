@@ -1,18 +1,17 @@
 # FastLane
-FastLane — calcule le chemin le plus rapide pour faire ses courses dans un supermarché.
+FastLane — calculates the fastest way to shop in a supermarket.
 
-## Fonctionnalités (V1)
+## Features (V1)
 
-- Carte du magasin (rayons, allées, entrée, caisse) affichée en SVG ou PNG surement.
-- Liste de produits à cocher, groupée par rayon.
-- Import d'une liste de courses au format texte (probablment), qui pré-coche automatiquement les produits reconnus.
-- Calcul du chemin optimal (entrée → rayons sélectionnés → caisse) via Dijkstra.
-- Affichage du trajet sur la carte et sous forme de liste d'étapes numérotée.
+- Store map (shelves, aisles, entrance, cash register) displayed in SVG or PNG (maybe).
+- List of products to check, grouped by department.
+- Import a shopping list in text format (probably), which automatically pre-checks the recognized products.
+- Optimal path calculation (input → selected radii → crate) via Dijkstra.
+- Display of the route on the map and as a numbered list of stages.
 
 ## Stack technique
 
-JavaScript, HTML/CSS. La carte du magasin et le catalogue de produits sont 
-des données fictives pour le moment.
+JavaScript, HTML/CSS. The store map and product catalog are fictionnal data for now.
 
 
 ## Structure du projet
@@ -36,5 +35,4 @@ fastlane/
 
 ## Statut
 
-Projet en cours de développement, également utilisé comme 
-projet d'apprentissage (graphes, Dijkstra, programmation dynamique).
+Project under development, also used as learning project (graphs, Dijkstra, dynamic programming).
