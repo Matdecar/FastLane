@@ -1,0 +1,161 @@
+# Affectation des produits aux rayons
+#
+# Format :  produit = rayon
+# Corrige la partie à droite du signe = et renvoie-moi le fichier.
+#
+# Rayons disponibles :
+#   Surgelés              Viandes               Crèmerie              Desserts
+#   Lait                  Épicerie              Pâtes                 Riz
+#   Frites                Conserves             Goûter                Petit-déjeuner
+#   Fruits & Légumes      Plats cuisinés        Charcuterie           Chips
+#   Épicerie salée        Bonbons               Chocolat & Café       Cuisine
+#   Animaux               Boucherie             Poissonnerie          Pain
+#   Pâtisserie            Gâteaux               Magazines             Livres
+#   Jouets                Produits de beauté    Produits d'entretien  Soda
+#   Alcool & Vins         Tech                  Papeterie             Vêtements
+#   Bricolage & Auto      Nourriture pour chat  Eau                   Jus
+#   Apéro
+
+# --- Surgelés ---
+Pizza         = Surgelés
+Glace         = Surgelés
+Poisson panés = Surgelés
+Steak haché   = Surgelés
+
+# --- Crèmerie ---
+Beurre             = Crèmerie
+Œufs               = Crèmerie
+Ficello            = Crèmerie
+Caprice des dieux  = Crèmerie
+Babybel            = Crèmerie
+Kiri               = Crèmerie
+Vache qui rit      = Crèmerie
+Mozzarella         = Crèmerie
+Fromage à raclette = Crèmerie
+Gruyère            = Crèmerie
+Crème fraîche      = Crèmerie
+
+# --- Lait ---
+Lait     = Lait
+Candy Up = Lait
+
+# --- Épicerie ---
+Sucre         = Épicerie
+Farine        = Épicerie
+Sel           = Épicerie
+Gros sel      = Épicerie
+Huile d'olive = Épicerie
+Huile Isio 4  = Épicerie
+Vinaigre      = Épicerie
+Béchamel      = Épicerie
+Ketchup       = Épicerie
+MayoMix       = Épicerie
+Mayonnaise    = Épicerie
+Cornichon     = Épicerie
+
+# --- Pâtes ---
+Pâtes      = Pâtes
+Bolognaise = Pâtes
+
+# --- Riz ---
+Riz (10 min) = Riz
+Riz (20 min) = Riz
+Riz basmati  = Riz
+Semoule      = Riz
+
+# --- Conserves ---
+Haricots verts      = Conserves
+Petit pois carottes = Conserves
+Cassoulet           = Conserves
+Lentilles           = Conserves
+Ravioli             = Conserves
+Thon                = Conserves
+Maïs                = Conserves
+Flageolets          = Conserves
+
+# --- Goûter ---
+Crêpe Wahoo = Goûter
+Delichoc    = Goûter
+
+# --- Petit-déjeuner ---
+Nutella   = Petit-déjeuner
+Confiture = Petit-déjeuner
+Banania   = Petit-déjeuner
+Ricoré    = Petit-déjeuner
+
+# --- Fruits & Légumes ---
+Pomme de terre = Fruits & Légumes
+Tomates        = Fruits & Légumes
+Banane         = Fruits & Légumes
+
+# --- Charcuterie ---
+Jambon (tranches)   = Charcuterie
+Jambon (allumettes) = Charcuterie
+Saucisson           = Charcuterie
+Blanc de poulet     = Charcuterie
+Émincé de poulet    = Charcuterie
+Saucisses           = Charcuterie
+Saucisse géante     = Charcuterie
+
+# --- Chips ---
+Chips = Chips
+
+# --- Bonbons ---
+Twix   = Bonbons
+Batnat = Bonbons
+
+# --- Poissonnerie ---
+Saumon = Poissonnerie
+
+# --- Pain ---
+Pain de mie         = Pain
+Pain de mie complet = Pain
+
+# --- Gâteaux ---
+Napolitain = Gâteaux
+
+# --- Produits de beauté ---
+Brosse à dents = Produits de beauté
+Dentifrice     = Produits de beauté
+Gel douche     = Produits de beauté
+Shampoing      = Produits de beauté
+Déodorant      = Produits de beauté
+Savon          = Produits de beauté
+Coton-tige     = Produits de beauté
+Mouchoir       = Produits de beauté
+Kleenex        = Produits de beauté
+Cire           = Produits de beauté
+
+# --- Produits d'entretien ---
+Éponges jaunes = Produits d'entretien
+Éponges vertes = Produits d'entretien
+Lessive        = Produits d'entretien
+
+# --- Eau ---
+Eau = Eau
+
+# --- Jus ---
+Jus d'orange = Jus
+
+# Rayons du magasin sans aucun produit :
+#   Viandes
+#   Desserts
+#   Frites
+#   Plats cuisinés
+#   Épicerie salée
+#   Chocolat & Café
+#   Cuisine
+#   Animaux
+#   Boucherie
+#   Pâtisserie
+#   Magazines
+#   Livres
+#   Jouets
+#   Soda
+#   Alcool & Vins
+#   Tech
+#   Papeterie
+#   Vêtements
+#   Bricolage & Auto
+#   Nourriture pour chat
+#   Apéro

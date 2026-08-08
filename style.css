@@ -1,0 +1,894 @@
+/* ===========================================================================
+   FastLane — feuille de style
+   Palette « papier + rayon de magasin » : un fond chaud, un vert panier pour
+   l'action, un rouge pour le parcours. Les couleurs de rayon viennent des
+   données (--teinte) et se propagent aux cartes comme à la carte du magasin.
+   ========================================================================= */
+
+:root {
+  --papier: #f6f1e7;
+  --surface: #fffdf9;
+  --surface-2: #f0e9dc;
+  --encre: #22201b;
+  --encre-douce: #6d6455;
+  --ligne: #ddd3c1;
+  --ligne-forte: #c9bda6;
+
+  --primaire: #2f6b4f;
+  --primaire-clair: #3d8a66;
+  --primaire-sombre: #23503c;
+  --accent: #d0483f;
+  --or: #e0a53c;
+
+  --ombre-s: 0 1px 2px rgb(34 32 27 / 6%), 0 2px 6px rgb(34 32 27 / 5%);
+  --ombre-m: 0 2px 6px rgb(34 32 27 / 8%), 0 12px 28px rgb(34 32 27 / 8%);
+
+  --rayon-s: 0.6rem;
+  --rayon-m: 1rem;
+  --rayon-l: 1.4rem;
+
+  --police: ui-rounded, "SF Pro Rounded", "Segoe UI Rounded", Nunito, system-ui, sans-serif;
+  --police-texte: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --police-chiffres: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papier: #16150f;
+    --surface: #201e17;
+    --surface-2: #2a2720;
+    --encre: #f2ece0;
+    --encre-douce: #a89c88;
+    --ligne: #3a352b;
+    --ligne-forte: #4d4638;
+
+    --primaire: #58a37c;
+    --primaire-clair: #6db991;
+    --primaire-sombre: #3f7e60;
+    --accent: #e0685c;
+    --or: #eab54f;
+
+    --ombre-s: 0 1px 2px rgb(0 0 0 / 30%);
+    --ombre-m: 0 2px 6px rgb(0 0 0 / 35%), 0 12px 28px rgb(0 0 0 / 30%);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 6.5rem;
+  background: var(--papier);
+  color: var(--encre);
+  font-family: var(--police-texte);
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2 {
+  font-family: var(--police);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.colonne {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* ---------------------------------------------------------------- en-tête */
+
+.entete {
+  background: linear-gradient(135deg, var(--primaire-sombre), var(--primaire));
+  color: #fff;
+  border-bottom: 0.3rem solid var(--or);
+}
+
+.bande {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 1.7rem;
+}
+
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logo {
+  width: 2.6rem;
+  height: 2.6rem;
+  flex-shrink: 0;
+  fill: none;
+  stroke: var(--or);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.entete h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.accroche {
+  margin: 0.1rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--or) 85%, #fff);
+}
+
+/* --------------------------------------------------------------- panneaux */
+
+.panneau {
+  background: var(--surface);
+  border: 1px solid var(--ligne);
+  border-radius: var(--rayon-l);
+  padding: 1.1rem;
+  box-shadow: var(--ombre-s);
+}
+
+.panneau-tete {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.panneau-tete h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.garantie {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.garantie-exacte {
+  color: var(--primaire);
+  background: color-mix(in srgb, var(--primaire) 12%, transparent);
+}
+
+.garantie-approchee {
+  color: var(--or);
+  background: color-mix(in srgb, var(--or) 16%, transparent);
+}
+
+.compteur {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primaire);
+  background: color-mix(in srgb, var(--primaire) 12%, transparent);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------- sélection des produits */
+
+.selection-tete {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.selection-tete h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Tiroir des rayons : seule cette partie se replie, la barre d'outils
+   au-dessus reste utilisable en permanence. */
+.tiroir {
+  margin-top: 0.9rem;
+  border-top: 1px solid var(--ligne);
+}
+
+.tiroir-tete {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.2rem 0.2rem;
+  font-family: var(--police);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+  user-select: none;
+}
+
+.tiroir-tete::-webkit-details-marker {
+  display: none;
+}
+
+.tiroir-libelle {
+  flex: 1;
+}
+
+.tiroir-tete .chevron {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.tiroir[open] .tiroir-tete .chevron {
+  transform: rotate(180deg);
+}
+
+/* ---------------------------------------------------------- barre d'outils */
+
+.outils {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.champ-recherche {
+  position: relative;
+  flex: 1 1 14rem;
+  display: flex;
+  align-items: center;
+}
+
+.icone-recherche {
+  position: absolute;
+  left: 0.75rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: var(--encre-douce);
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+#recherche {
+  width: 100%;
+  padding: 0.6rem 0.8rem 0.6rem 2.35rem;
+  font: inherit;
+  font-size: 0.92rem;
+  color: inherit;
+  background: var(--surface-2);
+  border: 1px solid var(--ligne);
+  border-radius: 999px;
+  outline-offset: 2px;
+}
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-family: var(--police);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+}
+
+.bouton svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bouton-discret {
+  background: var(--surface-2);
+  color: var(--encre);
+  border-color: var(--ligne);
+}
+
+.bouton-discret:hover {
+  background: var(--ligne);
+}
+
+.bouton:active {
+  transform: translateY(1px);
+}
+
+#upload-liste {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.note {
+  margin: 0.7rem 0 0;
+  font-size: 0.85rem;
+  color: var(--encre-douce);
+}
+
+.note:empty {
+  display: none;
+}
+
+.note-alerte {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.erreur {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.erreur:empty {
+  display: none;
+}
+
+/* ------------------------------------------------------- liste des rayons */
+
+#checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.7rem;
+  align-content: start;
+  margin-top: 0.9rem;
+}
+
+.rayon {
+  background: var(--surface);
+  border: 1px solid var(--ligne);
+  border-radius: var(--rayon-m);
+  overflow: hidden;
+  box-shadow: var(--ombre-s);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  align-self: start;
+}
+
+.rayon-actif {
+  border-color: var(--teinte);
+  box-shadow: 0 0 0 1px var(--teinte), var(--ombre-s);
+}
+
+.rayon > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--police);
+  font-weight: 700;
+  font-size: 0.95rem;
+  user-select: none;
+}
+
+.rayon > summary::-webkit-details-marker {
+  display: none;
+}
+
+.rayon > summary:hover {
+  background: var(--surface-2);
+}
+
+.pastille {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--teinte);
+  flex-shrink: 0;
+}
+
+.rayon-nom {
+  flex: 1;
+  min-width: 0;
+}
+
+.rayon-compte {
+  font-family: var(--police-chiffres);
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  padding: 0 0.35rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--encre-douce);
+}
+
+.rayon-actif .rayon-compte {
+  background: var(--teinte);
+  color: #fff;
+}
+
+.chevron {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: var(--encre-douce);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.18s ease;
+  flex-shrink: 0;
+}
+
+.rayon[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.produits {
+  padding: 0.25rem 0.45rem 0.55rem;
+  border-top: 1px solid var(--ligne);
+}
+
+.produit {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: var(--rayon-s);
+  cursor: pointer;
+  font-size: 0.92rem;
+  transition: background-color 0.12s ease;
+}
+
+.produit:hover {
+  background: var(--surface-2);
+}
+
+.produit:has(input:checked) {
+  background: color-mix(in srgb, var(--teinte) 13%, transparent);
+  font-weight: 600;
+}
+
+.produit input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--teinte);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------- parcours */
+
+/* Plus large que la colonne de lecture : la carte est ce qu'on regarde, elle
+   prend toute la place disponible et l'itinéraire se déploie dessous. */
+.resultat {
+  display: grid;
+  gap: 1rem;
+  max-width: 88rem;
+  margin: 2.5rem auto 0;
+  width: calc(100% - 2rem);
+}
+
+.cadre-carte {
+  background: var(--surface-2);
+  border: 1px solid var(--ligne);
+  border-radius: var(--rayon-m);
+  padding: 0.5rem;
+  overflow: auto;
+  overscroll-behavior-x: contain;
+}
+
+#carte {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* En dessous de cette largeur les libellés des rayons deviennent illisibles :
+     mieux vaut faire défiler la carte que la réduire davantage. */
+  min-width: 34rem;
+}
+
+/* Dès qu'il y a de la place, on dimensionne la carte sur la hauteur de la
+   fenêtre plutôt que sur la largeur : à pleine largeur elle deviendrait plus
+   haute que l'écran, et on ne la verrait de nouveau qu'en morceaux. */
+@media (min-width: 48rem) {
+  .cadre-carte {
+    display: grid;
+    justify-items: center;
+  }
+
+  #carte {
+    width: auto;
+    height: min(85vh, 52rem);
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+#parcours:empty::before {
+  content: 'Coche tes produits, puis trace ton chemin.';
+  display: block;
+  padding: 1.5rem 0.5rem;
+  text-align: center;
+  color: var(--encre-douce);
+  font-size: 0.92rem;
+}
+
+.parcours-tete {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.parcours-tete h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------------- indicateurs */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.5rem, 1fr));
+  gap: 0.6rem;
+}
+
+.stat {
+  background: var(--surface-2);
+  border-radius: var(--rayon-m);
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+  display: grid;
+  gap: 0.1rem;
+}
+
+.stat-valeur {
+  font-family: var(--police);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--primaire);
+}
+
+.stat-valeur small {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.stat-nom {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+}
+
+/* ------------------------------------------------------------- progression */
+
+.progression {
+  margin: 1rem 0 0.75rem;
+}
+
+.progression-barre {
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.progression-barre span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: var(--primaire);
+  transition: width 0.25s ease;
+}
+
+.progression-texte {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--encre-douce);
+}
+
+/* -------------------------------------------------------------- itinéraire */
+
+/* Une seule colonne deviendrait interminable avec seize arrêts : on répartit
+   en colonnes, remplies de gauche à droite pour garder l'ordre de lecture. */
+.itineraire {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 0.15rem 1rem;
+}
+
+.itineraire li {
+  border-radius: var(--rayon-s);
+}
+
+.etape-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0.5rem;
+  cursor: pointer;
+  border-radius: var(--rayon-s);
+  transition: background-color 0.12s ease;
+}
+
+.etape-label:hover {
+  background: var(--surface-2);
+}
+
+/* Case masquée mais toujours focusable : le repère visuel passe sur la
+   pastille, sinon la navigation au clavier se ferait à l'aveugle. */
+.etape-fait {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.etape-fait:focus-visible + .puce {
+  outline: 3px solid var(--primaire-clair);
+  outline-offset: 2px;
+}
+
+.puce {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-family: var(--police-chiffres);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--teinte, var(--encre-douce));
+  transition: background-color 0.15s ease;
+}
+
+.etape-corps {
+  display: grid;
+  min-width: 0;
+}
+
+.etape-nom {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.etape-produits {
+  font-size: 0.8rem;
+  color: var(--encre-douce);
+  overflow-wrap: anywhere;
+}
+
+/* Un arrêt fait s'efface sans disparaître : on doit pouvoir revenir dessus. */
+.etape-faite .etape-label {
+  opacity: 0.45;
+}
+
+.etape-faite .etape-nom {
+  text-decoration: line-through;
+}
+
+/* Le numéro cède la place à une coche, sans changer la taille de la pastille. */
+.etape-faite .puce {
+  position: relative;
+  background: var(--encre-douce);
+  color: transparent;
+}
+
+.etape-faite .puce::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.itineraire .borne {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0.5rem;
+  color: var(--encre-douce);
+}
+
+.itineraire .borne .puce {
+  background: transparent;
+  border: 2px dashed var(--ligne-forte);
+}
+
+.itineraire .borne .etape-nom {
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------- barre d'action */
+
+.barre-action {
+  position: fixed;
+  inset: auto 0 0;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  background: color-mix(in srgb, var(--papier) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--ligne);
+}
+
+.bouton-principal {
+  display: block;
+  width: min(100%, 60rem);
+  margin: 0 auto;
+  padding: 0.95rem;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--primaire);
+  box-shadow: var(--ombre-m);
+}
+
+.bouton-principal:hover:not(:disabled) {
+  background: var(--primaire-clair);
+}
+
+.bouton-principal:disabled {
+  background: var(--ligne);
+  color: var(--encre-douce);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+:where(a, button, input, summary):focus-visible {
+  outline: 3px solid var(--primaire-clair);
+  outline-offset: 2px;
+  border-radius: var(--rayon-s);
+}
+
+/* --------------------------------------------------- carte du magasin (SVG) */
+
+.sol-magasin {
+  fill: var(--surface);
+  stroke: var(--ligne-forte);
+  stroke-width: 1.2;
+}
+
+.couloir {
+  stroke: color-mix(in srgb, var(--surface) 65%, var(--surface-2));
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+.meuble-fond {
+  fill: var(--teinte);
+  stroke: color-mix(in srgb, var(--teinte) 65%, #000);
+  stroke-width: 0.3;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.meuble-visite .meuble-fond {
+  opacity: 1;
+  stroke-width: 0.7;
+}
+
+.meuble-label {
+  fill: #fff;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-family: var(--police);
+  paint-order: stroke;
+  stroke: color-mix(in srgb, var(--teinte) 55%, #000);
+  stroke-width: 0.7;
+  stroke-linejoin: round;
+}
+
+.caisse-meuble {
+  fill: var(--surface);
+  stroke: var(--ligne-forte);
+  stroke-width: 0.4;
+}
+
+.repere circle {
+  stroke: var(--surface);
+  stroke-width: 0.8;
+}
+
+.repere-label {
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-family: var(--police);
+  paint-order: stroke;
+  stroke: var(--surface);
+  stroke-width: 1.3;
+  stroke-linejoin: round;
+}
+
+.trace-halo {
+  fill: none;
+  stroke: var(--surface);
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trace {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fleche-sens {
+  fill: var(--accent);
+  stroke: var(--surface);
+  stroke-width: 0.5;
+  stroke-linejoin: round;
+}
+
+.marqueur-etape circle {
+  fill: var(--accent);
+  stroke: var(--surface);
+  stroke-width: 0.7;
+}
+
+.marqueur-etape text {
+  fill: #fff;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Marqueurs de la carte reflétant l'avancement des courses. */
+.marqueur-etape {
+  transition: opacity 0.2s ease;
+}
+
+.marqueur-etape.etape-faite {
+  opacity: 0.3;
+}
+
+.marqueur-etape.etape-active circle {
+  stroke: var(--primaire);
+  stroke-width: 1.6;
+}

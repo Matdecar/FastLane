@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FastLane — ta liste, ton chemin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="entete">
+    <div class="bande">
+      <div class="marque">
+        <svg class="logo" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 18 L9 18 L13 6 L21 6" />
+          <circle cx="9" cy="18" r="2.2" />
+          <circle cx="13" cy="6" r="2.2" />
+        </svg>
+        <div>
+          <h1>FastLane</h1>
+          <p class="accroche">Ta liste, ton chemin</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="colonne">
+    <section class="panneau selection" aria-labelledby="titre-selection">
+      <div class="selection-tete">
+        <h2 id="titre-selection">Ta liste de courses</h2>
+        <span class="compteur" id="compteur-selection">aucun produit</span>
+      </div>
+
+      <!-- Recherche, import et remise à zéro restent toujours accessibles,
+           même quand les rayons sont repliés. -->
+      <div class="outils">
+        <label class="champ-recherche">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="icone-recherche">
+            <circle cx="11" cy="11" r="6.5" />
+            <path d="M16 16 L21 21" />
+          </svg>
+          <input type="search" id="recherche" placeholder="Chercher un produit…" autocomplete="off" />
+        </label>
+
+        <label class="bouton bouton-discret" for="upload-liste">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 16 L12 4 M7 9 L12 4 L17 9" />
+            <path d="M4 16 L4 20 L20 20 L20 16" />
+          </svg>
+          Importer un .txt
+        </label>
+        <input type="file" id="upload-liste" accept=".txt" />
+
+        <button type="button" class="bouton bouton-discret" id="tout-effacer">Tout décocher</button>
+      </div>
+
+      <p class="note" id="nom-fichier"></p>
+      <p class="note note-alerte" id="non-reconnus"></p>
+
+      <details class="tiroir" id="tiroir-rayons" open>
+        <summary class="tiroir-tete">
+          <span class="tiroir-libelle">Tous les rayons</span>
+          <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10 L12 15 L17 10" /></svg>
+        </summary>
+        <div id="checklist" aria-label="Produits par rayon"></div>
+      </details>
+    </section>
+
+    <p class="erreur" id="erreur" role="alert"></p>
+  </main>
+
+  <!-- La carte déborde volontairement de la colonne de lecture : c'est la
+       pièce maîtresse, elle a besoin de toute la largeur disponible. -->
+  <section class="panneau resultat" aria-label="Parcours">
+    <div class="cadre-carte"><svg id="carte"></svg></div>
+    <div id="parcours" aria-live="polite"></div>
+  </section>
+
+  <div class="barre-action">
+    <button id="calculer" class="bouton bouton-principal">Tracer mon chemin</button>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
